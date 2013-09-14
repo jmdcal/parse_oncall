@@ -3,7 +3,7 @@ parse_oncall.rb
 
 This script parses on-call calendars in iCal format, and generates corresponding Nagios timeperiods. Timeperiods are only generated for valid Nagios contacts, defined in 'contacts'. This works with static ics files, as well as remote calendars like Zimbra or Google Calendar.
 
-The script assumes you have a template file containing other timeperiod information, and appends the on-call dates/times to individual's on_call timeperiod. Sample template is included.
+The script assumes you have a template file containing other timeperiod information, and appends the on-call dates/times to each user's on_call timeperiod. Sample template is included.
 
 **NOTE:**
 You must configure your calendar entry to have an 'attendee' matching the nagios contact name. So, if you want to modify the on-call schedule for a contact named 'sedgar', you must add 'sedgar@yourdomain.com' as an 'attendee' for that particular calendar event.
