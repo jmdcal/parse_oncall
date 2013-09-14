@@ -11,7 +11,7 @@ You must configure your calendar entry to have an 'attendee' matching the nagios
 Example of file created...
 
 timeperiods.cfg:
---------------------------------------------
+```
 define timeperiod{
     timeperiod_name         sedgar_on_call
     2013-07-13 - 2013-07-21  10:00-22:00  # grabbed from the calendar
@@ -27,12 +27,12 @@ define timeperiod{
     2013-05-13 - 2013-05-14  00:00-24:00   # grabbed from the calendar
     use                     na_workhours
 }
---------------------------------------------
+```
 
 Using the resulting file as a nagios timeperiod config, we can set each contact to only receive notifications during their workhours + on-call hours.
 
 contacts.cfg:
---------------------------------------------
+```
 define contact{
         name                            sedgar
         alias                           Stefanie Forrester
@@ -57,6 +57,4 @@ define contact{
         host_notification_period        24x7
         service_notification_period     24x7
         }
-
---------------------------------------------
-
+```
