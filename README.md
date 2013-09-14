@@ -39,8 +39,8 @@ define contact{
         use                             default-contact
         host_notification_period        sedgar_on_call
         service_notification_period     sedgar_on_call
-        pager                           
-        email                           
+        pager                           +1222333444
+        email                           me@mydomain.com
         contactgroups                   admins
         }
 
