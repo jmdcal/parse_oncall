@@ -1,7 +1,7 @@
 parse_oncall.rb
 ===============
 
-This script parses on-call calendars in iCal format, and generates corresponding Nagios timeperiods. Timeperiods are only generated for valid Nagios contacts, defined in 'contacts'. This works with static ics, as well as remote calendars like Zimbra or Google Calendar.
+This script parses on-call calendars in iCal format, and generates corresponding Nagios timeperiods. Timeperiods are only generated for valid Nagios contacts, defined in 'contacts'. This works with static ics files, as well as remote calendars like Zimbra or Google Calendar.
 
 The script assumes you have a template file containing other timeperiod information, and appends the on-call dates/times to individual's on_call timeperiod. Sample template is included.
 
@@ -29,7 +29,7 @@ define timeperiod{
 }
 ```
 
-Using the resulting file as a nagios timeperiod config, we can set each contact to only receive notifications during their workhours + on-call hours.
+Using the resulting file as a nagios timeperiod config, we can set each contact to only receive notifications during their workhours + on-call hours. So the above file will be timeperiods.cfg. Here's an example of how to use that with the contacts.
 
 contacts.cfg:
 ```
