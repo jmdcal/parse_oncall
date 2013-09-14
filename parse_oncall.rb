@@ -31,7 +31,7 @@ schedule = Hash.new
 contacts.each{|x| schedule[x] = [] }
 
 #open("https://my.zimbra.server/home/username/calendar?fmt=ics&tz=UTC", "r") do |file|
-File.open("engopstest.ics", "r") do |file|
+File.open("mycalendar.ics", "r") do |file|
     calendar = RiCal.parse(file)
     calendar.each do |cal|
         cal.events.each do |event|
