@@ -97,7 +97,7 @@ newfile.close
 nagready = system( "/usr/sbin/nagios -v /etc/nagios/nagios.cfg" )
 if nagready
     puts "Nagios config verified. Restarting."
-    system( "/usr/sbin/nagios restart" )
+    system( "/sbin/service nagios restart" )
 else
    puts "ERROR! Config is borked. Please run 'nagios -v /etc/nagios/nagios.cfg' by hand and debug the issue. Nagios cannot be restarted in current state."
 end
