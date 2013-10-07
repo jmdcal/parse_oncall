@@ -89,3 +89,16 @@ template.readlines.each do |line|
         end
     end
 end
+
+template.close
+newfile.close
+
+# Now that the new config has been written, verify the config and restart nagios.
+nagready = system( "/usr/sbin/nagios -v /etc/nagios/nagios.cfg" )
+if nagready
+    puts "Nagios config verified. Restarting."
+    system( "/usr/sbin/nagios restart" )
+else
+   puts "ERROR! Config is borked. Please run 'nagios -v /etc/nagios/nagios.cfg' by hand and debug the issue. Nagios cannot be restarted in current state."
+end
+
